@@ -3,15 +3,20 @@ package M2;
 import java.text.DecimalFormat;
 
 /**
+ * @author Carles Falgueras - Date 15/06/2021 - BackEndJava
  * 
- * Nivell 3 - Fase 1
- * En aquest exercici es proposa un exercici complex de comprovacions i bucles
- * per crear un cronòmetre digital que vagi mostrant el temps transcorregut en
- * format rellotge hh:mm:ss amb un segon d'espera.
- * Només necessites 3 variables int (hour, minutes, seconds)
- * El cronòmetre ha de tenir 6 dígits en tot moment i ha d'iniciar a 00:00:00
- * L’aplicació no ha de finalitzar mai.
- * Per que el rellotge trigui un segon has d’implementar:  Thread.sleep(1000);
+ *         Nivell 3 - Fase 1
+ *         En aquest exercici es proposa un exercici complex de comprovacions i
+ *         bucles
+ *         per crear un cronòmetre digital que vagi mostrant el temps
+ *         transcorregut en
+ *         format rellotge hh:mm:ss amb un segon d'espera.
+ *         Només necessites 3 variables int (hour, minutes, seconds)
+ *         El cronòmetre ha de tenir 6 dígits en tot moment i ha d'iniciar a
+ *         00:00:00
+ *         L’aplicació no ha de finalitzar mai.
+ *         Per que el rellotge trigui un segon has d’implementar:
+ *          Thread.sleep(1000);
  */
 
 public class LletresRepetidesNivell3Fase1 {
@@ -42,9 +47,9 @@ public class LletresRepetidesNivell3Fase1 {
 					System.out.println(Clock);
 
 					try {
-						Thread.sleep(10);
+						Thread.sleep(1000);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+						
 						e.printStackTrace();
 					}
 				}
