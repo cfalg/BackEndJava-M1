@@ -104,7 +104,7 @@ public class RestaurantNivell3 {
 
 		while (seguirDemanant == 1) {
 			System.out.println("Introdueix nom de Pizza");
-			String platDemanat = reader.next();
+			String platDemanat = reader.nextLine();
 
 			// Bloc que validará que el plat demanat existeixi
 			try {
@@ -123,13 +123,13 @@ public class RestaurantNivell3 {
 			 * S'ha de tornar a preguntar si es vol seguir demanant o no.
 			 */
 
-			do {
-				try {
-					seguirDemanant = volsSeguirDemanant();
-				} catch (RestaurantExcRevisioTipus e) {
-					System.out.println(e.getMessage());
-				}
-			} while ((seguirDemanant != 1 && seguirDemanant != 2));
+			// do {
+			try {
+				seguirDemanant = volsSeguirDemanant();
+			} catch (RestaurantExcRevisioTipus e) {
+				System.out.println(e.getMessage());
+			}
+			// } while ((seguirDemanant != 1 && seguirDemanant != 2));
 
 		}
 
@@ -145,38 +145,39 @@ public class RestaurantNivell3 {
 
 		Scanner reader = new Scanner(System.in);
 		int seguir = 0;
-		// do {
-		System.out.println("Vols seguir demanant ('1=Si'/'2=No')");
+		do {
+			System.out.println("Vols seguir demanant ('1=Si'/'2=No')");
 
-		try {
+			try {
 
-			// Això em donava errors de bucle infinit int i = reader.nextInt();
-			int i = Integer.parseInt(reader.nextLine());
-			if (i == 1) {
-				seguir = 1;
-			} else if (i == 2) {
-				seguir = 2;
-			} else {
-				throw new RestaurantExcRevisioTipus(String.valueOf(i));
-			}
+				// Això em donava errors de bucle infinit int i = reader.nextInt();
+				int i = Integer.parseInt(reader.nextLine());
+				if (i == 1) {
+					seguir = 1;
+				} else if (i == 2) {
+					seguir = 2;
+				} else {
+					throw new RestaurantExcRevisioTipus(String.valueOf(i));
+				}
 
-		} catch (NumberFormatException e) {
-//			System.out.println("Aquesta opció sel.leccionada no és un número.");
-			throw new RestaurantExcRevisioTipus("");
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			} catch (NumberFormatException e) {
+				System.out.println("Aquesta opció sel.leccionada no és un número.");
+//				throw new RestaurantExcRevisioTipus("");
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 //				System.out.println(e.getClass());
 //				System.out.println("Aquesta opció sel.leccionada no es correcte.");
 //				seguir = 0;
-			throw new RestaurantExcRevisioTipus("");
-		}
+//			throw new RestaurantExcRevisioTipus("");
+			}
 //			finally {
 //				return seguir;
 //			}
+			
+
+		} while ((seguir != 1 && seguir != 2));
 		return seguir;
-
-		// } while ((seguir != 1 && seguir != 2));
-
+		
 	}
 
 	/*
@@ -219,6 +220,8 @@ public class RestaurantNivell3 {
 				if (c.equalsIgnoreCase(plats[i])) {
 					preuTotal = preuTotal + preus[i];
 					comandaCorrecte = true;
+					
+					System.out.println("    S'ha demanat el plat "+ c.toString());
 				}
 			}
 
