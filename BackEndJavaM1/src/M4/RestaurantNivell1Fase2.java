@@ -104,10 +104,10 @@ public class RestaurantNivell1Fase2 {
 
 		while (seguirDemanant == 1) {
 			System.out.println("Introdueix nom de Pizza");
-			comanda.add(reader.next());
+			comanda.add(reader.nextLine());
 
 			System.out.println("Vols seguir demanant ('Si'/'No')");
-			if ("No".equals(reader.next())) {
+			if ("No".equals(reader.nextLine())) {
 				seguirDemanant = 0;
 			}
 		}

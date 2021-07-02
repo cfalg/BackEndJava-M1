@@ -115,7 +115,7 @@ public class RestaurantNivell2 {
 
 		while (seguirDemanant == 1) {
 			System.out.println("Introdueix nom de Pizza");
-			String platDemanat = reader.next();
+			String platDemanat = reader.nextLine();
 
 			// Bloc que validará que el plat demanat existeixi
 			try {
